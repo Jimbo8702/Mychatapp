@@ -34,7 +34,9 @@ export default function OpenConverstaion() {
                 ref={lastMessage ? setRef : null}
                 key={index}
                 className={`my-1 d-flex flex-column ${
-                  message.fromMe ? "align-self-end" : ""
+                  message.fromMe
+                    ? "align-self-end align-items-end"
+                    : "align-items-start"
                 }`}
               >
                 <div
@@ -46,7 +48,7 @@ export default function OpenConverstaion() {
                 </div>
                 <div
                   className={`text-muted small ${
-                    message.fromMe ? "text-right" : " "
+                    message.fromMe ? "align-self-end" : " "
                   }`}
                 >
                   {message.fromMe ? "You" : message.senderName}
